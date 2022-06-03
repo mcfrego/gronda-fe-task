@@ -1,24 +1,20 @@
 // Modules
-import React, {useEffect} from 'react';
-import {Text, View, Image, SafeAreaView, StyleSheet} from 'react-native';
-
-import {GLOBAL} from '../../view/styles/global';
-
-import { TYPOGRAPHY } from '../../view/styles/typography';
-import {Button} from '../../components';
-import {tabbedNavigation} from '../../navigators/navigation';
-
-import { splashScreenLaunched } from '../../../shared/redux/thunk/app';
-
+import React, { useEffect } from 'react';
+import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { useDispatch } from 'react-redux';
 
+import { splashScreenLaunched } from '../../../shared/redux/thunk/app';
+import { Button } from '../../components';
+import { tabbedNavigation } from '../../navigators/navigation';
+import { GLOBAL } from '../../view/styles/global';
+import { TYPOGRAPHY } from '../../view/styles/typography';
 
 function Splash() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(splashScreenLaunched());
-  }, []);
+  },        []);
 
   const navigateToHome = () => {
     tabbedNavigation();

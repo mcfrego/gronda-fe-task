@@ -11,6 +11,6 @@ function Settings() {
       </ScrollView>
     </SafeAreaView>
   );
-} 
+}
 
 export default Settings;

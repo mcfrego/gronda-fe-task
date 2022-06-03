@@ -7,10 +7,10 @@ function Home() {
   return (
     <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
       <ScrollView style={GLOBAL.LAYOUT.pageContainer}>
-        <Text>You can start your test</Text>
+        <Text>You can start your test MOMO</Text>
       </ScrollView>
     </SafeAreaView>
   );
-} 
+}
 
 export default Home;
