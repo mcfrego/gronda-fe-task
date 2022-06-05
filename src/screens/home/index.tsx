@@ -3,7 +3,7 @@ import { SafeAreaView, ScrollView, Text } from 'react-native';
 
 import { GLOBAL } from '../../view/styles/global';
 
-function Home() {
+const Home = function () {
   return (
     <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
       <ScrollView style={GLOBAL.LAYOUT.pageContainer}>
@@ -11,6 +11,6 @@ function Home() {
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 export default Home;

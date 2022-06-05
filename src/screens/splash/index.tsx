@@ -9,12 +9,12 @@ import { tabbedNavigation } from '../../navigators/navigation';
 import { GLOBAL } from '../../view/styles/global';
 import { TYPOGRAPHY } from '../../view/styles/typography';
 
-function Splash() {
+const Splash = function () {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(splashScreenLaunched());
-  },        []);
+  }, []);
 
   const navigateToHome = () => {
     tabbedNavigation();
@@ -40,7 +40,7 @@ function Splash() {
       </View>
     </SafeAreaView>
   );
-}
+};
 
 export default Splash;
 

@@ -3,7 +3,7 @@ import { SafeAreaView, ScrollView, Text } from 'react-native';
 
 import { GLOBAL } from '../../view/styles/global';
 
-function Settings() {
+const Settings = function () {
   return (
     <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
       <ScrollView style={GLOBAL.LAYOUT.pageContainer}>
@@ -11,6 +11,6 @@ function Settings() {
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 export default Settings;
