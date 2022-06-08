@@ -8,3 +8,8 @@ export interface CreationState {
   title: string;
   img_url: string;
 }
+
+export interface CreationCountState {
+  id: number;
+  count: number;
+}

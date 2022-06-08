@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import { creationApi } from '../services/api';
 import { appSlice } from '../slices/app';
+import { creationCountSlice } from '../slices/creationsCount';
 
 let additionalMiddlewares = new Array();
 if (__DEV__) {
@@ -16,6 +17,7 @@ export const store = configureStore({
   reducer: {
     [appSlice.name]: appSlice.reducer,
     [creationApi.reducerPath]: creationApi.reducer,
+    [creationCountSlice.name]: creationCountSlice.reducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware()
