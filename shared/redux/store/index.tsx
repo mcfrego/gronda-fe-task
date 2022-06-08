@@ -1,5 +1,4 @@
-import { applyMiddleware, createStore } from 'redux';
-import * as thunkMiddleware from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
 
 import reducers from '../reducers';
 
@@ -8,15 +7,20 @@ import reducers from '../reducers';
  */
 // import { logger } from '../middlewares/logger';
 
-let middlewares = [thunkMiddleware.default];
+let additionalMiddlewares = new Array();
 if (__DEV__) {
   const logger = require('redux-logger');
   const loggerMiddleware = logger.createLogger({
     duration: true,
   });
-  middlewares = [...middlewares, loggerMiddleware];
+  additionalMiddlewares = [loggerMiddleware];
 }
-const store = createStore(reducers, applyMiddleware(...middlewares));
+const store = configureStore({
+  reducer: reducers,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware().concat(...additionalMiddlewares),
+});
+
 /**
  * Add custom middlewares
  * They are executed in the order they are registered here
