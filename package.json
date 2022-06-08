@@ -26,6 +26,7 @@
   },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "server": "json-server --watch ./shared/json-server/creationsData.json --delay 1000",
     "test": "cross-env-shell jest",
     "ios": "npx react-native run-ios --simulator='iPhone 12 Pro'",
     "android": "npx react-native run-android --variant=Debug",
@@ -37,6 +38,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
+    "json-server": "^0.17.0",
     "react": "^17.0.2",
     "react-native": "^0.66.0",
     "react-native-navigation": "^7.23.1",
