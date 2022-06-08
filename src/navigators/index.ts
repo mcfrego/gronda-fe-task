@@ -1,6 +1,6 @@
 import { Navigation } from 'react-native-navigation';
 
-import store from '../../shared/redux/store';
+import { store } from '../../shared/redux/store';
 import { registerScreens } from '../screens';
 import { showSplash } from './navigation';
 

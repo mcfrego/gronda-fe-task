@@ -1,11 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import reducers from '../reducers';
-
-/**
- * Custom middle ware implementations
- */
-// import { logger } from '../middlewares/logger';
+import { appSlice } from '../slices/app';
 
 let additionalMiddlewares = new Array();
 if (__DEV__) {
@@ -15,18 +10,14 @@ if (__DEV__) {
   });
   additionalMiddlewares = [loggerMiddleware];
 }
-const store = configureStore({
-  reducer: reducers,
+
+export const store = configureStore({
+  reducer: {
+    [appSlice.name]: appSlice.reducer,
+  },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat(...additionalMiddlewares),
 });
 
-/**
- * Add custom middlewares
- * They are executed in the order they are registered here
- */
-// const store = createStore(reducers, applyMiddleware(...middlewares, logger));
-
+export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
-export default store;

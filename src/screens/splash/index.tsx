@@ -1,19 +1,19 @@
 // Modules
 import React, { useEffect } from 'react';
 import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import { useDispatch } from 'react-redux';
 
-import { splashScreenLaunched } from '../../../shared/redux/thunk/app';
+import { useAppDispatch } from '../../../shared/redux/hooks';
+import { splashLaunched } from '../../../shared/redux/slices/app';
 import { Button } from '../../components';
 import { tabbedNavigation } from '../../navigators/navigation';
 import { GLOBAL } from '../../view/styles/global';
 import { TYPOGRAPHY } from '../../view/styles/typography';
 
 const Splash = function () {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(splashScreenLaunched());
+    dispatch(splashLaunched());
   }, []);
 
   const navigateToHome = () => {
