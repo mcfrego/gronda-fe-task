@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import { creationApi } from '../services/api';
 import { appSlice } from '../slices/app';
 
 let additionalMiddlewares = new Array();
@@ -14,9 +15,12 @@ if (__DEV__) {
 export const store = configureStore({
   reducer: {
     [appSlice.name]: appSlice.reducer,
+    [creationApi.reducerPath]: creationApi.reducer,
   },
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(...additionalMiddlewares),
+    getDefaultMiddleware()
+      .concat(creationApi.middleware)
+      .concat(...additionalMiddlewares),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
