@@ -9,7 +9,7 @@ export interface Props {
   style?: ViewStyle;
 }
 
-const Button: React.FC<Props> = ({ title, onClick, style }: Props) => (
+const Button = ({ title, onClick, style }: Props) => (
   <TouchableOpacity
     activeOpacity={GLOBAL.CTA.TouchableOpacity.default}
     style={[GLOBAL.CTA.Style.primary, GLOBAL.LAYOUT.shadow, style]}
