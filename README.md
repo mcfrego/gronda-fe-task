@@ -16,6 +16,9 @@
 - Clickable list items navigate to individual view
 - Count of clicked items in individual view
 
+https://user-images.githubusercontent.com/12646766/173205675-055ea072-405d-4d63-8e2c-54db33d69c1e.mov
+
+
 ## Changes from Template
 
 - Redux logic changed to Redux Toolkit and RTK Query:
