@@ -1,10 +1,36 @@
 <div align="center">
   <br>
-  <img alt="Friday App" src="./src/view/assets/images/sample/template.png" width="400px">
   <h1>🚀 Friday App 🚀</h1>
   <strong>Build enterprise React Native apps</strong>
 </div>
 <br />
+
+# Test results
+
+## Features implemented
+
+- Pressable carousel banner with multiple items
+- List with data fetched from mocked server
+- Image loading state
+- Data fetching loading state (json-server timedout)
+- Clickable list items navigate to individual view
+- Count of clicked items in individual view
+
+## Changes from Template
+
+- Redux logic changed to Redux Toolkit and RTK Query:
+  - Redux Toolkit slices for managing the store
+  - RTK Query for fetching and caching data from data server
+
+## Remaining stuff
+
+- Topbar styling in individual view (did not get it work)
+
+## Steps to start
+
+- yarn server (starts json-server with mocked data)
+- yarn start (starts metro)
+- yarn ios / yarn android (starts simulator)
 
 # React Native Template - TypeScript
 
@@ -18,23 +44,24 @@
 
 The project has been setup based off [RN Getting Started](https://facebook.github.io/react-native/docs/getting-started) and instructions from [Microsoft's Github TypeScript React Native Starter](https://github.com/Microsoft/TypeScript-React-Native-Starter) repo.
 
-___
+---
 
 ### Supports React 17, React Native 0.66.0, React Native Navigation v7, Flipper and Hermes
 
 Update (Nov 2021):
+
 - Added Types (actions, reducers, store, components and more).
 - Core API service using fetch
 - Support for M1
 
-| Updates | RNN | RN | React | Comments |
-|---|---|---|---|---|
-|  Nov '21 | 7.23.1 | 0.66.0 | 17.0.2 | Type definitions
-|  May '21 | 7.14.0 | 0.64.1 | 17.0.1 | Update RN RNN, Hermes Support
-|  Oct '20 | 7.1.0 | 0.63.3 | 16.13.1 | Support for Flipper
-|  Apr '20 | 3.7.0 | 0.61.5 | 16.9.0 | Support for RN > 0.60, Android X
-|  Nov '19 | 2.26.2 | 0.59.10 |  | Maintenance |
-|  Mar '19 | 2.13.1 | 0.58.6 | 16.8.4 |
+| Updates | RNN    | RN      | React   | Comments                         |
+| ------- | ------ | ------- | ------- | -------------------------------- |
+| Nov '21 | 7.23.1 | 0.66.0  | 17.0.2  | Type definitions                 |
+| May '21 | 7.14.0 | 0.64.1  | 17.0.1  | Update RN RNN, Hermes Support    |
+| Oct '20 | 7.1.0  | 0.63.3  | 16.13.1 | Support for Flipper              |
+| Apr '20 | 3.7.0  | 0.61.5  | 16.9.0  | Support for RN > 0.60, Android X |
+| Nov '19 | 2.26.2 | 0.59.10 |         | Maintenance                      |
+| Mar '19 | 2.13.1 | 0.58.6  | 16.8.4  |
 
 ## Introduction
 
@@ -61,12 +88,12 @@ Jumpstart building robust apps using React Native and TypeScript with most commo
 
 ##### App Screens
 
-| ![Splash](./src/view/assets/images/sample/1.png "Splash") | ![Home](./src/view/assets/images/sample/2.png "Home") |![Side Menu](./src/view/assets/images/sample/3.png "Side Menu") |
-| :-------------------------------------------------------: | :---------------------------------------------------: | :---------------------------------------------------: |
+| ![Splash](./src/view/assets/images/sample/1.png 'Splash') | ![Home](./src/view/assets/images/sample/2.png 'Home') | ![Side Menu](./src/view/assets/images/sample/3.png 'Side Menu') |
+| :-------------------------------------------------------: | :---------------------------------------------------: | :-------------------------------------------------------------: |
 
 ##### Flipper Support
 
-![Flipper](./src/view/assets/images/sample/4.png "Flipper")
+![Flipper](./src/view/assets/images/sample/4.png 'Flipper')
 
 ### Table of Contents
 
@@ -137,11 +164,13 @@ Presentation layer for the app - screens, styles, images, icons etc.
 ### Getting Started
 
 Make sure node version installed is `>=12.x.x`. Then install using yarn (or npm):
+
 ```
 yarn install
 ```
 
 Start the Metro Bundler:
+
 ```
 yarn start
 ```
@@ -165,11 +194,13 @@ yarn ios
 ###### Android
 
 Start an Android Simulator from:
+
 ```
 Android Studio > Tools > AVD Manager > Run any device
 ```
 
 Similarly, run from Android Studio itself Or from Terminal:
+
 ```
 yarn android
 # runs the following command
@@ -178,15 +209,15 @@ yarn android
 
 ### Commands
 
-|  | Remark |
-|---|---|
-| `yarn start` | Starts metro bundler |
-| `yarn ios` | Starts iOS app. Start metro bundler first |
-| `yarn android` | Starts Android app. Start metro bundler and Android emulator first |
-| `yarn lint` | linting |
-| `yarn lint:fix` | tries to fix linting issues automatically |
-| `yarn build:android:debug` | Android debug build |
-| `yarn build:android:release` | Android release build |
+|                              | Remark                                                             |
+| ---------------------------- | ------------------------------------------------------------------ |
+| `yarn start`                 | Starts metro bundler                                               |
+| `yarn ios`                   | Starts iOS app. Start metro bundler first                          |
+| `yarn android`               | Starts Android app. Start metro bundler and Android emulator first |
+| `yarn lint`                  | linting                                                            |
+| `yarn lint:fix`              | tries to fix linting issues automatically                          |
+| `yarn build:android:debug`   | Android debug build                                                |
+| `yarn build:android:release` | Android release build                                              |
 
 ### Cheat Sheet
 
@@ -198,7 +229,7 @@ XCode -> Project Folder -> Click on `Images.xcassets` -> Click on `LaunchScreen`
 
 Change the 3 images here to set the new launch screen for iOS.
 
-![Launch Screen](./src/view/assets/images/sample/splash-image.png "Launch Screen")
+![Launch Screen](./src/view/assets/images/sample/splash-image.png 'Launch Screen')
 
 #### Android Launch Screen
 
@@ -209,17 +240,22 @@ Change the 3 images here to set the new launch screen for iOS.
 Change the images the `drawable-*` folders to set the new launch screen for Android.
 
 #### M1 support
+
 Some additional steps may be required for project to work on M1.
 
-  - Disable Rosetta in Terminal
-  - Install ffi
+- Disable Rosetta in Terminal
+- Install ffi
+
 ```
 sudo arch -x86_64 gem install ffi
 ```
-  - Re-install dependencies
+
+- Re-install dependencies
+
 ```
 arch -x86_64 pod install
 ```
+
 Now try and run CocoaPods.
 
 P.S.: Thanks to samanthadotcom#7043 (discord)
@@ -233,6 +269,7 @@ For Single screen application, replace this tabbed based navigation with a singl
 #### Renaming the App
 
 You might also want to rename the app for your own use. Follow any of the links below.
+
 - [How to Rename A React Native App](https://medium.com/the-react-native-log/how-to-rename-a-react-native-app-dafd92161c35)
 
 Or
