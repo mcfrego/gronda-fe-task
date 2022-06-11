@@ -12,7 +12,7 @@ const Home = function (props: { componentId: string }) {
   const dispatch = useAppDispatch();
   const { data, error, isLoading } = useGetCreationsQuery();
 
-  const onElementClick = (id: number) => {
+  const onElementClick = (id: number, title: string) => {
     dispatch(creationClicked(id));
     ROUTER.push(
       {
@@ -20,6 +20,7 @@ const Home = function (props: { componentId: string }) {
         passProps: { creationId: id },
       },
       SCREENS.CreationView,
+      title,
     );
   };
 

@@ -7,6 +7,7 @@ import { Navigation } from 'react-native-navigation';
 
 import { INavigation } from '../../shared/redux/types/INavigation';
 import { SCREENS } from '../constants/screen';
+import { TYPOGRAPHY } from '../view/styles/typography';
 import { STATUS_BAR_OPTIONS } from './navigation';
 
 /**
@@ -49,10 +50,21 @@ const push = (
         statusBar: STATUS_BAR_OPTIONS,
         topBar: {
           visible: true,
-          drawBehind: false,
+          drawBehind: true,
           title: {
-            text: title || id.toString(),
+            text: title || '',
           },
+          // background: {
+          //   color: TYPOGRAPHY.COLOR.StatusBar,
+          // },
+          // borderColor: TYPOGRAPHY.COLOR.StatusBar,
+          // backButton: {
+          //   icon: {
+          //     uri: require('../assets/images/back.png'),
+          //     width: 10,
+          //     height: 10,
+          //   },
+          // },
         },
       },
     },

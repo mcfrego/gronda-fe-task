@@ -7,7 +7,7 @@ import { GridItem } from '..';
 export interface Props {
   title: string;
   data: CreationState[];
-  onElementClick: (id: number) => void;
+  onElementClick: (id: number, title: string) => void;
   style?: ViewStyle;
 }
 

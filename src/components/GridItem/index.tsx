@@ -15,14 +15,14 @@ import { TYPOGRAPHY } from '../../view/styles/typography';
 
 export interface Props {
   data: CreationState;
-  onElementClick: (id: number) => void;
+  onElementClick: (id: number, title: string) => void;
 }
 
 const GridItem = function ({ data, onElementClick }: Props) {
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => onElementClick(data.id)}>
+      onPress={() => onElementClick(data.id, data.title)}>
       <Image
         style={styles.image}
         resizeMode="contain"
