@@ -1,4 +1,4 @@
-import { StyleSheet, Platform, ViewStyle, TextStyle } from 'react-native';
+import { Platform, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 
 import { TYPOGRAPHY } from './typography';
 
