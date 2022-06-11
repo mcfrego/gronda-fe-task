@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     width: '48%',
     maxWidth: 250,
     justifyContent: 'space-between',
-    marginBottom: 20,
+    marginBottom: 26,
   },
   image: {
     width: '100%',
@@ -49,5 +49,6 @@ const styles = StyleSheet.create({
   },
   text: {
     marginTop: 10,
+    fontWeight: '600',
   },
 });
