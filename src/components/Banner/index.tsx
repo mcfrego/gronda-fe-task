@@ -1,10 +1,12 @@
 import * as React from 'react';
 import {
+  Alert,
   FlatList,
   ImageBackground,
   ImageSourcePropType,
   StyleSheet,
   Text,
+  TouchableOpacity,
   ViewStyle,
 } from 'react-native';
 
@@ -20,24 +22,31 @@ export interface Props {
   data: BannerData[];
 }
 
-const Banner = ({ style, data }: Props) => (
-  <FlatList
-    data={data}
-    horizontal
-    showsHorizontalScrollIndicator={false}
-    style={styles.flatList}
-    renderItem={({ item }) => (
-      <ImageBackground
-        style={{ ...styles.container, ...style }}
-        imageStyle={styles.image}
-        source={item.image}>
-        <Text style={styles.subtitle}>{`(${item.id}) New`}</Text>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.subtitle}>{item.subtitle}</Text>
-      </ImageBackground>
-    )}
-  />
-);
+const Banner = ({ style, data }: Props) => {
+  const onItemClick = () =>
+    Alert.alert('Element clicked', 'This would display some amazing stuff');
+
+  return (
+    <FlatList
+      data={data}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      style={styles.flatList}
+      renderItem={({ item }) => (
+        <ImageBackground
+          style={{ ...styles.container, ...style }}
+          imageStyle={styles.image}
+          source={item.image}>
+          <TouchableOpacity style={styles.touchable} onPress={onItemClick}>
+            <Text style={styles.subtitle}>{`(${item.id}) New`}</Text>
+            <Text style={styles.title}>{item.title}</Text>
+            <Text style={styles.subtitle}>{item.subtitle}</Text>
+          </TouchableOpacity>
+        </ImageBackground>
+      )}
+    />
+  );
+};
 
 export default Banner;
 
@@ -46,8 +55,13 @@ const styles = StyleSheet.create({
     height: 400,
   },
   container: {
-    justifyContent: 'center',
     marginRight: 30,
+  },
+  touchable: {
+    width: '100%',
+    height: '100%',
+    flex: 1,
+    justifyContent: 'center',
   },
   image: { borderRadius: 10 },
   title: {
