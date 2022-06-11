@@ -10,8 +10,6 @@ import {
 } from 'react-native';
 
 import { CreationState } from '../../../shared/redux/types/stores';
-import { GLOBAL } from '../../view/styles/global';
-import { TYPOGRAPHY } from '../../view/styles/typography';
 
 export interface Props {
   data: CreationState;

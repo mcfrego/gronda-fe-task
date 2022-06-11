@@ -28,15 +28,14 @@ const Splash = function () {
           resizeMode={'contain'}
           source={require('../../assets/images/logo_full.png')}
         />
-        <Text>
-          Gronda is a platform for culinary professionals and passionate
-          foodies. Therefore one of the main features in our app is the explore
-          page. Here we show the content to our users, so they can get inspired
-          every time they open the app. There are multiple actions available in
-          this initial view and you should focus on rendering the data and add
-          basic actions to each one of the icons present in the screen
-        </Text>
         <Button title={'Start my Test'} onClick={navigateToHome} />
+        <Image
+          style={styles.gif}
+          resizeMode={'contain'}
+          source={{
+            uri: 'https://media2.giphy.com/media/l3UcD7vkCptuTGAX6/giphy.gif?cid=ecf05e47jfmk6nf6hxvb663dn0w4qyhrhdluezbg9766n7te&rid=giphy.gif&ct=g',
+          }}
+        />
       </View>
     </SafeAreaView>
   );
@@ -54,5 +53,9 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '70%',
+  },
+  gif: {
+    width: '70%',
+    height: 300,
   },
 });

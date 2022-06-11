@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FlatList, Text, ViewStyle } from 'react-native';
+import { FlatList, StyleSheet, Text, ViewStyle } from 'react-native';
 
 import { CreationState } from '../../../shared/redux/types/stores';
 import { GridItem } from '..';
@@ -16,11 +16,9 @@ const GridList = function ({ title, data, style, onElementClick }: Props) {
     <>
       <FlatList
         contentContainerStyle={{}}
-        columnWrapperStyle={{ justifyContent: 'space-between' }}
-        ListHeaderComponent={
-          <Text style={{ fontSize: 16, fontWeight: '600' }}>{title}</Text>
-        }
-        ListHeaderComponentStyle={{ marginBottom: 20, alignSelf: 'flex-start' }}
+        columnWrapperStyle={styles.column}
+        ListHeaderComponent={<Text style={styles.headerText}>{title}</Text>}
+        ListHeaderComponentStyle={styles.header}
         data={data}
         renderItem={({ item, index }) => (
           <GridItem key={index} data={item} onElementClick={onElementClick} />
@@ -33,3 +31,9 @@ const GridList = function ({ title, data, style, onElementClick }: Props) {
 };
 
 export default GridList;
+
+const styles = StyleSheet.create({
+  column: { justifyContent: 'space-between' },
+  headerText: { fontSize: 16, fontWeight: '600' },
+  header: { marginBottom: 20, alignSelf: 'flex-start' },
+});
