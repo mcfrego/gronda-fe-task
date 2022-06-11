@@ -1,15 +1,9 @@
 // Modules
 import React from 'react';
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 import { CreationState } from '../../../shared/redux/types/stores';
+import { ImageLoading } from '../';
 
 export interface Props {
   data: CreationState;
@@ -21,7 +15,7 @@ const GridItem = function ({ data, onElementClick }: Props) {
     <TouchableOpacity
       style={styles.container}
       onPress={() => onElementClick(data.id, data.title)}>
-      <Image
+      <ImageLoading
         style={styles.image}
         resizeMode="contain"
         source={{ uri: data.img_url }}
